@@ -1,4 +1,3 @@
-# spdlog-build
-spdlog build tool for ios.
-
-辅助构建spdlog, 方便连接给ios 项目
+# spdlog-src
+Build staticlib of spdlog to link with ios project.
+xcode 集成 spdlog 很难受，通过 rust 曲线 link spdlog.

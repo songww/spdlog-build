@@ -6,7 +6,7 @@ fn main() {
         "aarch64" => "arm64",
         v @ _ => panic!("Unsupported architecture {}.", v),
     };
-    let dst = Config::new("spdlog-src")
+    let dst = Config::new("./spdlog-src")
         .define("SPDLOG_BUILD_EXAMPLE", "NO")
         .define("SPDLOG_BUILD_BENCH", "NO")
         .define("SPDLOG_BUILD_TESTS", "NO")

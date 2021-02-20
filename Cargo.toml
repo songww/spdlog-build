@@ -1,5 +1,5 @@
 [package]
-name = "spdlog-sys"
+name = "spdlog-src"
 version = "0.1.0"
 authors = ["songww <sww4718168@163.com>"]
 edition = "2018"
