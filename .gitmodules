@@ -1,0 +1,3 @@
+[submodule "spdlog-src"]
+	path = spdlog-src
+	url = https://hub.fastgit.org/gabime/spdlog.git
