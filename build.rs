@@ -22,9 +22,10 @@ fn main() {
         .build();
     //-DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED=NO
 
-    let dst = match env::var("PROFILE").unwrap().as_str() {
-        "release" => dst.join("build/Release-iphoneos"),
-        "debug" => dst.join("build/Debug-iphoneos"),
+    let dst = match (env::var("PROFILE").unwrap().as_str(), env::var("DEBUG").unwrap_or("false").as_str()) {
+        ("release", "false") => dst.join("build/Release-iphoneos"),   // without debuginfo
+        ("release", "true") => dst.join("build/RelWithDebInfo-iphoneos"),   // with debuginfo
+        ("debug", _) => dst.join("build/Debug-iphoneos"),
         _ => panic!("Invalid profile."),
     };
     println!("cargo:rustc-link-search=native={}", dst.display());
