@@ -22,7 +22,7 @@ fn main() {
         .build();
     //-DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED=NO
 
-    let dst = match (env::var("PROFILE").unwrap().as_str(), env::var("DEBUG").unwrap_or("false").as_str()) {
+    let dst = match (env::var("PROFILE").unwrap().as_str(), env::var("DEBUG").unwrap_or("false".to_string()).as_str()) {
         ("release", "false") => dst.join("build/Release-iphoneos"),   // without debuginfo
         ("release", "true") => dst.join("build/RelWithDebInfo-iphoneos"),   // with debuginfo
         ("debug", _) => dst.join("build/Debug-iphoneos"),
