@@ -25,7 +25,7 @@ fn main() {
     let dst = match (env::var("PROFILE").unwrap().as_str(), env::var("DEBUG").unwrap_or("false".to_string()).as_str()) {
         ("release", "false") => dst.join("build/Release-iphoneos"),   // without debuginfo
         ("release", "true") => dst.join("build/RelWithDebInfo-iphoneos"),   // with debuginfo
-        ("debug", _) => dst.join("build/Debug-iphoneos"),
+        ("debug", _) => dst.join("build/RelWithDebInfo-iphoneos"),
         _ => panic!("Invalid profile."),
     };
     println!("cargo:rustc-link-search=native={}", dst.display());
