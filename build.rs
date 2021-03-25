@@ -24,10 +24,12 @@ fn main() {
         .target("iphoneos")
         .build();
 
+    let mut is_spdlogd = false;
     let debug = env::var("DEBUG").unwrap_or("false".to_string()).as_str() == "true";
     let dst = match env::var("OPT_LEVEL").unwrap_or("0".to_string()).as_str() {
         "0" => {
             assert!(debug);
+            is_spdlogd = true;
             dst.join("build/Debug-iphoneos")
         }
         "1" | "2" | "3" => {
@@ -41,5 +43,9 @@ fn main() {
         _ => panic!("Invalid profile."),
     };
     println!("cargo:rustc-link-search=native={}", dst.display());
-    println!("cargo:rustc-link-lib=static=spdlog");
+    if is_spdlogd {
+        println!("cargo:rustc-link-lib=static=spdlogd");
+    } else {
+        println!("cargo:rustc-link-lib=static=spdlog");
+    }
 }
