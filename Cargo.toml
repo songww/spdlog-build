@@ -3,7 +3,11 @@ name = "spdlog-src"
 version = "0.1.0"
 authors = ["songww <sww4718168@163.com>"]
 edition = "2018"
-license = "MIT"
+description = "Build spdlog for iOS."
+repository = "https://github.com/songww/spdlog-src.git"
+license = "MIT OR Apache-2.0"
+keywords = [ "spdlog" ]
+categories = [ "development-tools::ffi" ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
