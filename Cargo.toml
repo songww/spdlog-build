@@ -1,6 +1,6 @@
 [package]
 name = "spdlog-src"
-version = "0.1.0+v1.8.4"
+version = "0.1.0+v1.8.5"
 authors = ["songww <sww4718168@163.com>"]
 edition = "2018"
 description = "Build spdlog for iOS."
