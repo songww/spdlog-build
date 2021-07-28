@@ -13,3 +13,7 @@ categories = [ "development-tools::ffi" ]
 
 [build-dependencies]
 cmake = "0.1"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-apple-darwin"
+targets = ["x86_64-apple-darwin", "aarch64-apple-ios"]
